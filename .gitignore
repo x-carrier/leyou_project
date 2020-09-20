@@ -1,0 +1,19 @@
+# Project exclude paths
+/leyou-auth/leyou-auth-common/target/
+/leyou-auth/leyou-auth-service/target/
+/leyou-cart/target/
+/leyou-common/target/
+/leyou-gateway/target/
+/leyou-goods-web/target/
+/leyou-item/leyou-item-interface/target/
+/leyou-item/leyou-item-service/target/
+/leyou-order/target/
+/leyou-rabbitmq/target/
+/leyou-registry/target/
+/leyou-upload/target/
+/leyou-user/leyou-user-interface/target/
+/leyou-user/leyou-user-service/target/
+/tools/kibana-6.3.0-windows-x86_64/kibana-6.3.0-windows-x86_64/node_modules/
+/tools/kibana-7.7.0-windows-x86_64/kibana-7.7.0-windows-x86_64/node_modules/
+/tools/kibana-7.7.0-windows-x86_64/kibana-7.7.0-windows-x86_64/x-pack/legacy/plugins/siem/node_modules/
+/tools/kibana-7.7.0-windows-x86_64/kibana-7.7.0-windows-x86_64/x-pack/node_modules/
