@@ -1,0 +1,31 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: cluster-es77
+      cluster-nodes: 192.168.109.139:9300
+  rabbitmq:
+    host: 192.168.109.139
+    port: 5672
+    virtual-host: /xiaohong
+    username: xiaohong
+    password: xiaohong
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_null    #将请求响应的jackson为空的数据过滤掉
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+      #拉去微服务的时间
+    registry-fetch-interval-seconds: 10
+  #心跳时间
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+
+

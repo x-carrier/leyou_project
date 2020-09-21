@@ -1,0 +1,20 @@
+server:
+  port:
+    10086
+
+spring:
+  application:
+    name:
+      leyou-registry
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    register-with-eureka: false  #不把自己注册到eureka中
+    fetch-registry: false #设置不拉去服务
+  server:
+    enable-self-preservation: false #关闭自我保护模式
+    delta-retention-timer-interval-in-ms: 10000 #定期清理无效连接
+
+

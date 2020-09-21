@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    host: 192.168.109.139
+    username: xiaohong
+    password: xiaohong
+    virtual-host: /xiaohong

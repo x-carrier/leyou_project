@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: item-service
+  datasource:
+    url: jdbc:mysql:///leyou?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  rabbitmq:
+    host: 192.168.109.139
+    port: 5672
+    virtual-host: /xiaohong
+    username: xiaohong
+    password: xiaohong
+    template:
+      exchange: LEYOU.ITEM.EXCHANGE #配置一个交换机
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5  #心跳时间
+    lease-expiration-duration-in-seconds: 13 #过期时间
+
+mybatis:
+  type-aliases-package: com.leyou.item.pojo  #mybatis扫描别名包路径

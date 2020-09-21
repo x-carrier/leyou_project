@@ -1,0 +1,40 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: leyou-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5  #设置拉取服务时间
+
+zuul:
+  prefix: /api  #网关前缀
+  #配置路由
+  routes:
+    item-service: /item/**  #路由到商品的微服务
+    search-service: /search/** #路由到搜索微服务
+    user-service: /user/** #路由到用户微服务
+    auth-service: /auth/** #路由到鉴权微服务
+    cart-service: /cart/** #路由到购物车微服务
+    order-service: /order/** #路由到订单工程
+    #给网关转发时携带域名信息，为后面的cookie domaim参数配置
+  add-host-header: true
+  #zuul网关里默认的含有一个过滤器会过滤掉cookie setCook信息，为避免，这里设置为null
+  sensitive-headers: null
+leyou:
+  jwt:
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    cookieName: LY_TOKEN
+    #白名单
+  filter:
+    allowPaths:  #以-开头表示这是一个集合
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
